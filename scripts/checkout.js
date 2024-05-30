@@ -153,13 +153,18 @@ document.querySelectorAll(".js-save-link").forEach((link) => {
       `.js-quantity-input-${productId}`
     );
     const newQuantity = Number(quantityInput.value);
-    updateQuantity(productId, newQuantity);
 
-    const quantityLabel = document.querySelector(
-      `.js-quantity-label-${productId}`
-    );
-    quantityLabel.innerHTML = newQuantity;
+    if (newQuantity >= 0 && newQuantity < 1000) {
+      updateQuantity(productId, newQuantity);
 
-    updateCartQuantity();
+      const quantityLabel = document.querySelector(
+        `.js-quantity-label-${productId}`
+      );
+      quantityLabel.innerHTML = newQuantity;
+
+      updateCartQuantity();
+    } else {
+      alert("That is not a valid amount");
+    }
   });
 });
