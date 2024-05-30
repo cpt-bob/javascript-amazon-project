@@ -71,6 +71,8 @@ function updateCartQuantity() {
   document.querySelector(".js-cart-quantity").innerHTML = cartQuanity;
 }
 
+updateCartQuantity();
+
 document.querySelectorAll(".js-add-to-cart").forEach((button) => {
   let addedMessageTimeoutId;
 
