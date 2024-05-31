@@ -15,6 +15,7 @@ import {
   calculateDeliveryDate,
 } from "../../data/deliveryOptions.js";
 import { renderPaymentSummary } from "./paymentSummary.js";
+import { renderCheckoutHeader } from "./checkoutHeader.js";
 
 export function renderOrderSummary() {
   let cartSummaryHTML = "";
@@ -163,12 +164,13 @@ export function renderOrderSummary() {
       if (newQuantity >= 0 && newQuantity < 1000) {
         updateQuantity(productId, newQuantity);
 
-        const quantityLabel = document.querySelector(
-          `.js-quantity-label-${productId}`
-        );
-        quantityLabel.innerHTML = newQuantity;
+        // const quantityLabel = document.querySelector(
+        //   `.js-quantity-label-${productId}`
+        // );
+        // quantityLabel.innerHTML = newQuantity;
 
-        updateCartQuantity();
+        //updateCartQuantity();
+        renderCheckoutHeader();
         renderOrderSummary();
         renderPaymentSummary();
       } else {
