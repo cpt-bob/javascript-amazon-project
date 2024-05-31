@@ -136,9 +136,6 @@ export function renderOrderSummary() {
 
   function updateCartQuantity() {
     const cartQuantity = calculateCartQuantity();
-    document.querySelector(
-      ".js-return-to-home-link"
-    ).innerHTML = `${cartQuantity} items`;
   }
 
   updateCartQuantity();
@@ -175,6 +172,8 @@ export function renderOrderSummary() {
         quantityLabel.innerHTML = newQuantity;
 
         updateCartQuantity();
+        renderOrderSummary();
+        renderPaymentSummary();
       } else {
         alert("That is not a valid amount");
       }
