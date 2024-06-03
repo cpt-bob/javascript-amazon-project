@@ -25,6 +25,7 @@ function saveToStorage() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
+// DON'T FORGET TO UNCOMMENT THE QUANTITY!
 export function addToCart(productId) {
   let matchingItem;
   // const quantitySelector = document.querySelector(
@@ -43,7 +44,7 @@ export function addToCart(productId) {
   } else {
     cart.push({
       productId,
-      quantity: 1,
+      quantity,
       deliveryOptionId: "1",
     });
   }
