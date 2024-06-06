@@ -43,8 +43,8 @@ export function addToCart(productId) {
     matchingItem.quantity += 1; //quantity;
   } else {
     cart.push({
-      productId,
-      quantity,
+      productId: productId,
+      quantity: 1,
       deliveryOptionId: "1",
     });
   }
