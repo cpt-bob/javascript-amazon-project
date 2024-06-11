@@ -52,6 +52,7 @@ class Car {
 
 class RaceCar extends Car {
   acceleration;
+  isTrunkOpen = "N/A";
 
   constructor(carDetails) {
     super(carDetails);
